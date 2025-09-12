@@ -1,0 +1,109 @@
+/* Global Stars Animation CSS - Apply to all pages */
+
+/* Star twinkle animation */
+@keyframes starTwinkle {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+        filter: drop-shadow(0 0 0px rgba(255, 215, 0, 0));
+    }
+    15% {
+        opacity: 0.8;
+        transform: scale(1.3) rotate(45deg);
+        filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.8));
+    }
+    30% {
+        opacity: 1;
+        transform: scale(0.9) rotate(90deg);
+        filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+    }
+    45% {
+        opacity: 0.9;
+        transform: scale(1.1) rotate(135deg);
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+    }
+    60% {
+        opacity: 0.7;
+        transform: scale(0.8) rotate(180deg);
+        filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.5));
+    }
+    75% {
+        opacity: 0.9;
+        transform: scale(1.05) rotate(225deg);
+        filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+    }
+    90% {
+        opacity: 0.5;
+        transform: scale(0.7) rotate(270deg);
+        filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.3));
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) rotate(360deg);
+        filter: drop-shadow(0 0 0px rgba(255, 215, 0, 0));
+    }
+}
+
+/* Sparkle fade animation */
+@keyframes sparkleFade {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Star float animation */
+@keyframes starFloat {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(360deg);
+    }
+}
+
+/* Global cursor stars container */
+.cursor-stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Star element styles */
+.cursor-star {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+/* Sparkle element styles */
+.cursor-sparkle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9998;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 0%, #ffd700 50%, transparent 100%);
+}
+
