@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagan's Gym &amp; Diet Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="gym.css">
+</head>
+<body>
+    <div class="bg-particles" id="particles"></div>
+
+    <nav class="gym-navbar">
+        <div class="gym-nav-container">
+            <div class="gym-logo">
+                <i class="fas fa-dumbbell logo-icon"></i>
+                <span>FitHub</span>
+            </div>
+            <ul class="gym-nav-menu" id="gymNavMenu">
+                <li><a href="#workout" class="gym-nav-link">Workout</a></li>
+                <li><a href="#diet" class="gym-nav-link">Diet Plan</a></li>
+                <li><a href="#gallery" class="gym-nav-link">Gallery</a></li>
+                <li><a href="#bmi" class="gym-nav-link">BMI Check</a></li>
+                <li><a href="#tips" class="gym-nav-link">Tips</a></li>
+            </ul>
+            <div class="gym-nav-actions">
+                <a href="booking.html" class="book-trainer-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Book Trainer</span>
+                </a>
+                <a href="index.html" class="back-portfolio-btn">
+                    <i class="fas fa-briefcase"></i>
+                    <span>My Portfolio</span>
+                </a>
+                <div class="gym-hamburger" id="gymHamburger">
+                    <span class="gym-bar"></span>
+                    <span class="gym-bar"></span>
+                    <span class="gym-bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="gym-hero" id="home">
+        <div class="gym-hero-content">
+            <div class="hero-badge"><i class="fas fa-fire"></i><span>Stay Consistent. Stay Strong.</span></div>
+            <h1 class="gym-hero-title">
+                <span class="gym-title-line">Welcome to</span>
+                <span class="gym-title-name">Jagan's FitHub</span>
+                <span class="gym-title-sub">Workout + Nutrition, All in One Place</span>
+            </h1>
+            <p class="gym-hero-desc">Track your weekly workouts, follow a science-backed diet plan, and stay consistent on your fitness journey. Built for discipline. Built for results.</p>
+            <div class="gym-hero-stats">
+                <div class="gym-stat"><span class="gym-stat-number" data-target="6">0</span><span class="gym-stat-label">Days / Week</span></div>
+                <div class="gym-stat"><span class="gym-stat-number" data-target="5">0</span><span class="gym-stat-label">Meal Plans</span></div>
+                <div class="gym-stat"><span class="gym-stat-number" data-target="20">0</span><span class="gym-stat-label">Exercises</span></div>
+            </div>
+            <div class="gym-hero-btns">
+                <a href="#workout" class="gym-btn-primary">View Workout Plan</a>
+                <a href="#diet" class="gym-btn-secondary">See Diet Plan</a>
+            </div>
+        </div>
+        <div class="gym-hero-visual">
+            <div class="gym-icon-ring">
+                <div class="ring-icon ri-1"><i class="fas fa-dumbbell"></i></div>
+                <div class="ring-icon ri-2"><i class="fas fa-heartbeat"></i></div>
+                <div class="ring-icon ri-3"><i class="fas fa-apple-alt"></i></div>
+                <div class="ring-icon ri-4"><i class="fas fa-running"></i></div>
+                <div class="ring-icon ri-5"><i class="fas fa-fire"></i></div>
+                <div class="ring-icon ri-6"><i class="fas fa-water"></i></div>
+                <div class="gym-profile-center">
+                    <img src="gym-images/gym-profile.jpg" alt="Jagan Gym Profile" class="gym-center-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workout Section -->
+    <section id="workout" class="workout-section">
+        <div class="gym-container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-dumbbell"></i> Workout Plan</span>
+                <h2 class="section-title">Weekly Training Schedule</h2>
+                <p class="section-desc">A 6-day push-pull-legs split designed for muscle gain and strength</p>
+            </div>
+            <div class="day-tabs">
+                <button class="day-tab active" data-day="monday">Mon</button>
+                <button class="day-tab" data-day="tuesday">Tue</button>
+                <button class="day-tab" data-day="wednesday">Wed</button>
+                <button class="day-tab" data-day="thursday">Thu</button>
+                <button class="day-tab" data-day="friday">Fri</button>
+                <button class="day-tab" data-day="saturday">Sat</button>
+                <button class="day-tab rest-tab" data-day="sunday">Sun</button>
+            </div>
+            <div class="workout-panels">
+
+                <div class="workout-panel active" id="panel-monday">
+                    <div class="panel-header">
+                        <div class="panel-title-group"><span class="day-label">Monday</span><h3>Chest &amp; Triceps <span class="muscle-badge push">Push</span></h3></div>
+                        <div class="panel-meta"><span><i class="fas fa-clock"></i> 60 min</span><span><i class="fas fa-fire"></i> ~450 kcal</span></div>
+                    </div>
+                    <div class="exercises-grid">
+                        <div class="exercise-card"><div class="ex-num">01</div><div class="ex-info"><h4>Bench Press</h4><p>4 Sets x 8-10 Reps</p><div class="ex-tags"><span>Compound</span><span>Chest</span></div></div><div class="ex-icon"><i class="fas fa-expand-arrows-alt"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">02</div><div class="ex-info"><h4>Incline Dumbbell Press</h4><p>3 Sets x 10-12 Reps</p><div class="ex-tags"><span>Compound</span><span>Upper Chest</span></div></div><div class="ex-icon"><i class="fas fa-angle-double-up"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">03</div><div class="ex-info"><h4>Cable Fly</h4><p>3 Sets x 12-15 Reps</p><div class="ex-tags"><span>Isolation</span><span>Chest</span></div></div><div class="ex-icon"><i class="fas fa-arrows-alt-h"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">04</div><div class="ex-info"><h4>Tricep Pushdown</h4><p>3 Sets x 12-15 Reps</p><div class="ex-tags"><span>Isolation</span><span>Triceps</span></div></div><div class="ex-icon"><i class="fas fa-arrow-down"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">05</div><div class="ex-info"><h4>Skull Crushers</h4><p>3 Sets x 10 Reps</p><div class="ex-tags"><span>Compound</span><span>Triceps</span></div></div><div class="ex-icon"><i class="fas fa-skull"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">06</div><div class="ex-info"><h4>Push-Ups Burnout</h4><p>2 Sets x Max Reps</p><div class="ex-tags"><span>Bodyweight</span><span>Chest</span></div></div><div class="ex-icon"><i class="fas fa-fire-alt"></i></div></div>
+                    </div>
+                </div>
+
+                <div class="workout-panel" id="panel-tuesday">
+                    <div class="panel-header">
+                        <div class="panel-title-group"><span class="day-label">Tuesday</span><h3>Back &amp; Biceps <span class="muscle-badge pull">Pull</span></h3></div>
+                        <div class="panel-meta"><span><i class="fas fa-clock"></i> 65 min</span><span><i class="fas fa-fire"></i> ~480 kcal</span></div>
+                    </div>
+                    <div class="exercises-grid">
+                        <div class="exercise-card"><div class="ex-num">01</div><div class="ex-info"><h4>Deadlift</h4><p>4 Sets x 5-6 Reps</p><div class="ex-tags"><span>Compound</span><span>Back</span></div></div><div class="ex-icon"><i class="fas fa-weight-hanging"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">02</div><div class="ex-info"><h4>Pull-Ups</h4><p>4 Sets x 8-10 Reps</p><div class="ex-tags"><span>Bodyweight</span><span>Lats</span></div></div><div class="ex-icon"><i class="fas fa-arrow-up"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">03</div><div class="ex-info"><h4>Barbell Rows</h4><p>4 Sets x 8-10 Reps</p><div class="ex-tags"><span>Compound</span><span>Back</span></div></div><div class="ex-icon"><i class="fas fa-compress-arrows-alt"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">04</div><div class="ex-info"><h4>Dumbbell Curl</h4><p>3 Sets x 10-12 Reps</p><div class="ex-tags"><span>Isolation</span><span>Biceps</span></div></div><div class="ex-icon"><i class="fas fa-hand-rock"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">05</div><div class="ex-info"><h4>Hammer Curl</h4><p>3 Sets x 12 Reps</p><div class="ex-tags"><span>Isolation</span><span>Brachialis</span></div></div><div class="ex-icon"><i class="fas fa-fist-raised"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">06</div><div class="ex-info"><h4>Face Pulls</h4><p>3 Sets x 15 Reps</p><div class="ex-tags"><span>Isolation</span><span>Rear Delt</span></div></div><div class="ex-icon"><i class="fas fa-bullseye"></i></div></div>
+                    </div>
+                </div>
+
+                <div class="workout-panel" id="panel-wednesday">
+                    <div class="panel-header">
+                        <div class="panel-title-group"><span class="day-label">Wednesday</span><h3>Legs <span class="muscle-badge legs">Legs</span></h3></div>
+                        <div class="panel-meta"><span><i class="fas fa-clock"></i> 70 min</span><span><i class="fas fa-fire"></i> ~550 kcal</span></div>
+                    </div>
+                    <div class="exercises-grid">
+                        <div class="exercise-card"><div class="ex-num">01</div><div class="ex-info"><h4>Barbell Squat</h4><p>4 Sets x 6-8 Reps</p><div class="ex-tags"><span>Compound</span><span>Quads</span></div></div><div class="ex-icon"><i class="fas fa-sort-amount-down"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">02</div><div class="ex-info"><h4>Leg Press</h4><p>4 Sets x 10-12 Reps</p><div class="ex-tags"><span>Compound</span><span>Quads</span></div></div><div class="ex-icon"><i class="fas fa-compress-alt"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">03</div><div class="ex-info"><h4>Romanian Deadlift</h4><p>3 Sets x 10 Reps</p><div class="ex-tags"><span>Compound</span><span>Hamstrings</span></div></div><div class="ex-icon"><i class="fas fa-level-down-alt"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">04</div><div class="ex-info"><h4>Leg Curl</h4><p>3 Sets x 12 Reps</p><div class="ex-tags"><span>Isolation</span><span>Hamstrings</span></div></div><div class="ex-icon"><i class="fas fa-sync-alt"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">05</div><div class="ex-info"><h4>Calf Raises</h4><p>4 Sets x 15-20 Reps</p><div class="ex-tags"><span>Isolation</span><span>Calves</span></div></div><div class="ex-icon"><i class="fas fa-arrows-alt-v"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">06</div><div class="ex-info"><h4>Lunges</h4><p>3 Sets x 12/leg</p><div class="ex-tags"><span>Compound</span><span>Glutes</span></div></div><div class="ex-icon"><i class="fas fa-walking"></i></div></div>
+                    </div>
+                </div>
+
+                <div class="workout-panel" id="panel-thursday">
+                    <div class="panel-header">
+                        <div class="panel-title-group"><span class="day-label">Thursday</span><h3>Shoulders &amp; Core <span class="muscle-badge push">Push</span></h3></div>
+                        <div class="panel-meta"><span><i class="fas fa-clock"></i> 55 min</span><span><i class="fas fa-fire"></i> ~400 kcal</span></div>
+                    </div>
+                    <div class="exercises-grid">
+                        <div class="exercise-card"><div class="ex-num">01</div><div class="ex-info"><h4>Overhead Press</h4><p>4 Sets x 6-8 Reps</p><div class="ex-tags"><span>Compound</span><span>Shoulders</span></div></div><div class="ex-icon"><i class="fas fa-arrow-up"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">02</div><div class="ex-info"><h4>Lateral Raises</h4><p>4 Sets x 12-15 Reps</p><div class="ex-tags"><span>Isolation</span><span>Side Delt</span></div></div><div class="ex-icon"><i class="fas fa-arrows-alt-h"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">03</div><div class="ex-info"><h4>Arnold Press</h4><p>3 Sets x 10 Reps</p><div class="ex-tags"><span>Compound</span><span>Full Delt</span></div></div><div class="ex-icon"><i class="fas fa-redo-alt"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">04</div><div class="ex-info"><h4>Plank Hold</h4><p>3 x 60 sec</p><div class="ex-tags"><span>Core</span><span>Stability</span></div></div><div class="ex-icon"><i class="fas fa-ruler-horizontal"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">05</div><div class="ex-info"><h4>Cable Crunches</h4><p>3 Sets x 15 Reps</p><div class="ex-tags"><span>Core</span><span>Abs</span></div></div><div class="ex-icon"><i class="fas fa-compress-alt"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">06</div><div class="ex-info"><h4>Russian Twists</h4><p>3 Sets x 20 Reps</p><div class="ex-tags"><span>Core</span><span>Obliques</span></div></div><div class="ex-icon"><i class="fas fa-sync"></i></div></div>
+                    </div>
+                </div>
+
+                <div class="workout-panel" id="panel-friday">
+                    <div class="panel-header">
+                        <div class="panel-title-group"><span class="day-label">Friday</span><h3>Arms &amp; Forearms <span class="muscle-badge pull">Pull</span></h3></div>
+                        <div class="panel-meta"><span><i class="fas fa-clock"></i> 50 min</span><span><i class="fas fa-fire"></i> ~380 kcal</span></div>
+                    </div>
+                    <div class="exercises-grid">
+                        <div class="exercise-card"><div class="ex-num">01</div><div class="ex-info"><h4>Barbell Curl</h4><p>4 Sets x 8-10 Reps</p><div class="ex-tags"><span>Compound</span><span>Biceps</span></div></div><div class="ex-icon"><i class="fas fa-hand-rock"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">02</div><div class="ex-info"><h4>Preacher Curl</h4><p>3 Sets x 10-12 Reps</p><div class="ex-tags"><span>Isolation</span><span>Biceps</span></div></div><div class="ex-icon"><i class="fas fa-pray"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">03</div><div class="ex-info"><h4>Close-Grip Bench</h4><p>4 Sets x 8-10 Reps</p><div class="ex-tags"><span>Compound</span><span>Triceps</span></div></div><div class="ex-icon"><i class="fas fa-hand-paper"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">04</div><div class="ex-info"><h4>Overhead Tricep Ext.</h4><p>3 Sets x 12 Reps</p><div class="ex-tags"><span>Isolation</span><span>Triceps</span></div></div><div class="ex-icon"><i class="fas fa-expand-alt"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">05</div><div class="ex-info"><h4>Wrist Curls</h4><p>3 Sets x 15 Reps</p><div class="ex-tags"><span>Isolation</span><span>Forearms</span></div></div><div class="ex-icon"><i class="fas fa-hand-pointer"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">06</div><div class="ex-info"><h4>Reverse Curl</h4><p>3 Sets x 12 Reps</p><div class="ex-tags"><span>Isolation</span><span>Forearms</span></div></div><div class="ex-icon"><i class="fas fa-undo-alt"></i></div></div>
+                    </div>
+                </div>
+
+                <div class="workout-panel" id="panel-saturday">
+                    <div class="panel-header">
+                        <div class="panel-title-group"><span class="day-label">Saturday</span><h3>Full Body + Cardio <span class="muscle-badge cardio">Cardio</span></h3></div>
+                        <div class="panel-meta"><span><i class="fas fa-clock"></i> 75 min</span><span><i class="fas fa-fire"></i> ~600 kcal</span></div>
+                    </div>
+                    <div class="exercises-grid">
+                        <div class="exercise-card"><div class="ex-num">01</div><div class="ex-info"><h4>Treadmill Run</h4><p>20 min @ 8-10 km/h</p><div class="ex-tags"><span>Cardio</span><span>Fat Burn</span></div></div><div class="ex-icon"><i class="fas fa-running"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">02</div><div class="ex-info"><h4>Burpees</h4><p>4 Sets x 15 Reps</p><div class="ex-tags"><span>HIIT</span><span>Full Body</span></div></div><div class="ex-icon"><i class="fas fa-bolt"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">03</div><div class="ex-info"><h4>Jump Rope</h4><p>3 x 3 min rounds</p><div class="ex-tags"><span>Cardio</span><span>Coordination</span></div></div><div class="ex-icon"><i class="fas fa-infinity"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">04</div><div class="ex-info"><h4>Dumbbell Complex</h4><p>3 Rounds x 8 each</p><div class="ex-tags"><span>Strength</span><span>Full Body</span></div></div><div class="ex-icon"><i class="fas fa-dumbbell"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">05</div><div class="ex-info"><h4>Box Jumps</h4><p>3 Sets x 10 Reps</p><div class="ex-tags"><span>Explosive</span><span>Legs</span></div></div><div class="ex-icon"><i class="fas fa-level-up-alt"></i></div></div>
+                        <div class="exercise-card"><div class="ex-num">06</div><div class="ex-info"><h4>Cool Down Stretching</h4><p>10 min full body</p><div class="ex-tags"><span>Recovery</span><span>Flexibility</span></div></div><div class="ex-icon"><i class="fas fa-spa"></i></div></div>
+                    </div>
+                </div>
+
+                <div class="workout-panel" id="panel-sunday">
+                    <div class="panel-header rest-panel-header">
+                        <div class="panel-title-group"><span class="day-label">Sunday</span><h3>Rest &amp; Recovery <span class="muscle-badge rest">REST</span></h3></div>
+                        <div class="panel-meta"><span><i class="fas fa-bed"></i> Recover</span><span><i class="fas fa-heart"></i> Recharge</span></div>
+                    </div>
+                    <div class="rest-content">
+                        <div class="rest-icon-big"><i class="fas fa-bed"></i></div>
+                        <h4>Rest Day - Your Muscles Grow Today</h4>
+                        <p>Recovery is just as important as training. Sleep well, eat clean, and prepare for the next week.</p>
+                        <div class="rest-tips">
+                            <div class="rest-tip"><i class="fas fa-moon"></i> Sleep 7-9 hours</div>
+                            <div class="rest-tip"><i class="fas fa-water"></i> Drink 3L water</div>
+                            <div class="rest-tip"><i class="fas fa-walking"></i> Light walk / yoga</div>
+                            <div class="rest-tip"><i class="fas fa-utensils"></i> Eat clean and enough protein</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diet Section -->
+    <section id="diet" class="diet-section">
+        <div class="gym-container">
+            <div class="section-header">
+                <span class="section-badge green"><i class="fas fa-apple-alt"></i> Diet Plan</span>
+                <h2 class="section-title">Daily Nutrition Plan</h2>
+                <p class="section-desc">Balanced meals to fuel your training and support muscle recovery</p>
+            </div>
+            <div class="macros-overview">
+                <div class="macro-card protein"><i class="fas fa-drumstick-bite"></i><div class="macro-info"><span class="macro-val">150g</span><span class="macro-label">Protein</span></div><div class="macro-bar-wrap"><div class="macro-bar" style="width:75%"></div></div></div>
+                <div class="macro-card carbs"><i class="fas fa-bread-slice"></i><div class="macro-info"><span class="macro-val">250g</span><span class="macro-label">Carbs</span></div><div class="macro-bar-wrap"><div class="macro-bar" style="width:85%"></div></div></div>
+                <div class="macro-card fats"><i class="fas fa-fish"></i><div class="macro-info"><span class="macro-val">60g</span><span class="macro-label">Healthy Fats</span></div><div class="macro-bar-wrap"><div class="macro-bar" style="width:50%"></div></div></div>
+                <div class="macro-card calories"><i class="fas fa-fire"></i><div class="macro-info"><span class="macro-val">2,200</span><span class="macro-label">Kcal / Day</span></div><div class="macro-bar-wrap"><div class="macro-bar" style="width:90%"></div></div></div>
+            </div>
+            <div class="meals-timeline">
+                <div class="meal-card"><div class="meal-time-badge"><i class="fas fa-sun"></i><span>6:30 AM</span></div><div class="meal-content"><h4>Breakfast</h4><ul><li><i class="fas fa-check"></i> 4 Egg Whites + 2 Whole Eggs</li><li><i class="fas fa-check"></i> 1 cup Oats with banana</li><li><i class="fas fa-check"></i> 1 glass milk / protein shake</li></ul><div class="meal-macros"><span>~550 kcal</span><span>35g Protein</span><span>60g Carbs</span></div></div></div>
+                <div class="meal-card"><div class="meal-time-badge"><i class="fas fa-clock"></i><span>10:00 AM</span></div><div class="meal-content"><h4>Mid-Morning Snack</h4><ul><li><i class="fas fa-check"></i> Mixed nuts (almonds, walnuts)</li><li><i class="fas fa-check"></i> 1 apple or banana</li><li><i class="fas fa-check"></i> Green tea / black coffee</li></ul><div class="meal-macros"><span>~250 kcal</span><span>8g Protein</span><span>25g Carbs</span></div></div></div>
+                <div class="meal-card"><div class="meal-time-badge"><i class="fas fa-utensils"></i><span>1:00 PM</span></div><div class="meal-content"><h4>Lunch</h4><ul><li><i class="fas fa-check"></i> 150g Chicken / Paneer / Fish</li><li><i class="fas fa-check"></i> 1 cup brown rice or 3 chapatis</li><li><i class="fas fa-check"></i> Mixed vegetables / salad</li><li><i class="fas fa-check"></i> 1 cup dal / legumes</li></ul><div class="meal-macros"><span>~650 kcal</span><span>45g Protein</span><span>80g Carbs</span></div></div></div>
+                <div class="meal-card pre-workout"><div class="meal-time-badge"><i class="fas fa-dumbbell"></i><span>4:30 PM</span></div><div class="meal-content"><h4>Pre-Workout</h4><ul><li><i class="fas fa-check"></i> 1 banana + 2 rice cakes</li><li><i class="fas fa-check"></i> Black coffee or pre-workout</li><li><i class="fas fa-check"></i> Creatine 5g (optional)</li></ul><div class="meal-macros"><span>~200 kcal</span><span>5g Protein</span><span>40g Carbs</span></div></div></div>
+                <div class="meal-card post-workout"><div class="meal-time-badge"><i class="fas fa-flask"></i><span>7:00 PM</span></div><div class="meal-content"><h4>Post-Workout</h4><ul><li><i class="fas fa-check"></i> Protein shake (30g protein)</li><li><i class="fas fa-check"></i> 1 banana or rice cakes</li><li><i class="fas fa-check"></i> 500ml water</li></ul><div class="meal-macros"><span>~300 kcal</span><span>32g Protein</span><span>30g Carbs</span></div></div></div>
+                <div class="meal-card"><div class="meal-time-badge"><i class="fas fa-moon"></i><span>8:30 PM</span></div><div class="meal-content"><h4>Dinner</h4><ul><li><i class="fas fa-check"></i> 150g Grilled chicken / egg / fish</li><li><i class="fas fa-check"></i> 2 chapatis or sweet potato</li><li><i class="fas fa-check"></i> Stir-fried vegetables</li><li><i class="fas fa-check"></i> 1 cup curd / Greek yogurt</li></ul><div class="meal-macros"><span>~550 kcal</span><span>40g Protein</span><span>50g Carbs</span></div></div></div>
+            </div>
+            <div class="hydration-banner">
+                <i class="fas fa-tint"></i>
+                <div><h4>Daily Hydration Goal</h4><p>Drink at least <strong>3-4 litres</strong> of water per day. Hydration boosts performance, recovery and metabolism.</p></div>
+                <div class="water-glasses">
+                    <span class="glass filled"></span><span class="glass filled"></span><span class="glass filled"></span><span class="glass filled"></span>
+                    <span class="glass filled"></span><span class="glass filled"></span><span class="glass filled"></span><span class="glass filled"></span>
+                    <span class="glass"></span><span class="glass"></span><span class="glass"></span><span class="glass"></span>
+                </div>
+            </div>
+
+            <!-- Pay As You Go Diet CTA Card -->
+            <div class="diet-cta-card">
+                <div class="diet-cta-content">
+                    <span class="diet-cta-badge"><i class="fas fa-bolt"></i> Custom Plan</span>
+                    <h4>Get Your Personalized Diet Plan</h4>
+                    <p>Unlock a custom nutrition guide tailored specifically to your body type, fitness level, and training goals. Using our flexible <strong>Pay-As-You-Go</strong> method, pay only when you need a plan updates—no monthly subscriptions or hidden fees.</p>
+                    <div class="diet-cta-features">
+                        <span><i class="fas fa-check-circle"></i> Custom Macro Breakdowns</span>
+                        <span><i class="fas fa-check-circle"></i> Local Home-Cooked Swaps</span>
+                        <span><i class="fas fa-check-circle"></i> Meal Timing Adjustments</span>
+                    </div>
+                </div>
+                <div class="diet-cta-action">
+                    <div class="diet-cta-price">
+                        <span class="price-currency">₹</span>
+                        <span class="price-val">50</span>
+                        <span class="price-period">/ Plan</span>
+                    </div>
+                    <a href="booking.html" class="diet-cta-btn">
+                        <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="gym-container">
+            <div class="section-header">
+                <span class="section-badge purple"><i class="fas fa-images"></i> Gallery</span>
+                <h2 class="section-title">My Gym Journey</h2>
+                <p class="section-desc">Consistency and dedication visualized through my training journey</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-index="0" data-caption="Focus and power. Getting stronger every single day.">
+                    <div class="gallery-img-wrapper">
+                        <img src="gym-images/gym-post-1.jpg" alt="Gym body progress 1" loading="lazy">
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="1" data-caption="Back width and details are starting to show. Keep pulling!">
+                    <div class="gallery-img-wrapper">
+                        <img src="gym-images/gym-post-2.jpg" alt="Gym body progress 2" loading="lazy">
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="2" data-caption="Core and conditioning. Diet is key for definition.">
+                    <div class="gallery-img-wrapper">
+                        <img src="gym-images/gym-post-3.jpg" alt="Gym body progress 3" loading="lazy">
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="3" data-caption="Leg gains. Never skip squat day.">
+                    <div class="gallery-img-wrapper">
+                        <img src="gym-images/gym-post-4.jpg" alt="Gym body progress 4" loading="lazy">
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="4" data-caption="Post-workout pump. Dedication beats motivation.">
+                    <div class="gallery-img-wrapper">
+                        <img src="gym-images/gym-post-5.jpg" alt="Gym body progress 5" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="galleryLightbox" class="lightbox" aria-hidden="true" role="dialog">
+        <button class="lightbox-close" aria-label="Close Gallery">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous Image"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" aria-label="Next Image"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <div class="lightbox-img-container">
+                <img id="lightboxImg" src="" alt="Lightbox View">
+            </div>
+            <div class="lightbox-caption-panel">
+                <div class="lightbox-counter"><span id="lightboxCurrentIndex">1</span> / 5</div>
+                <p id="lightboxCaption">Caption goes here</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BMI Calculator -->
+    <section id="bmi" class="bmi-section">
+        <div class="gym-container">
+            <div class="section-header">
+                <span class="section-badge orange"><i class="fas fa-calculator"></i> BMI Check</span>
+                <h2 class="section-title">BMI Calculator</h2>
+                <p class="section-desc">Know your Body Mass Index and understand where you stand</p>
+            </div>
+            <div class="bmi-wrapper">
+                <div class="bmi-calculator">
+                    <div class="bmi-inputs">
+                        <div class="bmi-input-group"><label for="bmi-height">Height (cm)</label><input type="number" id="bmi-height" placeholder="e.g. 175" min="100" max="250"></div>
+                        <div class="bmi-input-group"><label for="bmi-weight">Weight (kg)</label><input type="number" id="bmi-weight" placeholder="e.g. 70" min="30" max="300"></div>
+                    </div>
+                    <button class="bmi-calc-btn" id="calcBmi">Calculate BMI</button>
+                    <div class="bmi-result" id="bmiResult" style="display:none">
+                        <div class="bmi-number" id="bmiNumber">--</div>
+                        <div class="bmi-category" id="bmiCategory">--</div>
+                        <div class="bmi-bar-container">
+                            <div class="bmi-scale">
+                                <div class="bmi-range underweight">Under<br>18.5</div>
+                                <div class="bmi-range normal">Normal<br>18.5-24.9</div>
+                                <div class="bmi-range overweight">Over<br>25-29.9</div>
+                                <div class="bmi-range obese">Obese<br>30+</div>
+                            </div>
+                            <div class="bmi-pointer" id="bmiPointer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bmi-info">
+                    <h4>BMI Ranges</h4>
+                    <div class="bmi-info-list">
+                        <div class="bmi-info-item" style="--color:#64b5f6"><span class="bmi-dot"></span><span>Below 18.5 - Underweight</span></div>
+                        <div class="bmi-info-item" style="--color:#69f0ae"><span class="bmi-dot"></span><span>18.5-24.9 - Normal Weight</span></div>
+                        <div class="bmi-info-item" style="--color:#ffab40"><span class="bmi-dot"></span><span>25-29.9 - Overweight</span></div>
+                        <div class="bmi-info-item" style="--color:#ef5350"><span class="bmi-dot"></span><span>30 and above - Obese</span></div>
+                    </div>
+                    <p class="bmi-note">BMI is a general guideline. For athletes with higher muscle mass, BMI can be misleading. Use alongside body fat percentage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips -->
+    <section id="tips" class="tips-section">
+        <div class="gym-container">
+            <div class="section-header">
+                <span class="section-badge purple"><i class="fas fa-lightbulb"></i> Pro Tips</span>
+                <h2 class="section-title">Fitness Golden Rules</h2>
+                <p class="section-desc">Simple habits that separate results from excuses</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card"><div class="tip-icon"><i class="fas fa-bed"></i></div><h4>Sleep 7-9 Hours</h4><p>Muscle is built during sleep, not in the gym. Growth hormone peaks at night - never skip recovery.</p></div>
+                <div class="tip-card"><div class="tip-icon"><i class="fas fa-clock"></i></div><h4>Progressive Overload</h4><p>Gradually increase weight or reps every week. Your muscles need new challenges to grow stronger.</p></div>
+                <div class="tip-card"><div class="tip-icon"><i class="fas fa-water"></i></div><h4>Stay Hydrated</h4><p>Even mild dehydration drops performance by 10-20%. Keep a water bottle with you at all times.</p></div>
+                <div class="tip-card"><div class="tip-icon"><i class="fas fa-egg"></i></div><h4>Protein Every Meal</h4><p>Aim for 1.6-2.2g protein per kg of bodyweight daily, spread across all your meals evenly.</p></div>
+                <div class="tip-card"><div class="tip-icon"><i class="fas fa-calendar-check"></i></div><h4>Consistency Beats Intensity</h4><p>Showing up daily beats one extreme workout per month. Build the habit first, results follow.</p></div>
+                <div class="tip-card"><div class="tip-icon"><i class="fas fa-brain"></i></div><h4>Mind-Muscle Connection</h4><p>Focus on the muscle you are training. Slow controlled reps with intent beat sloppy heavy lifts.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gym-footer">
+        <div class="gym-container">
+            <div class="gym-footer-inner">
+                <div class="gym-footer-brand"><i class="fas fa-dumbbell"></i><span>Jagan's FitHub</span></div>
+                <p>Stay consistent. Trust the process. Results will follow.</p>
+                <a href="index.html" class="footer-portfolio-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.day-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.day-tab').forEach(function(t) { t.classList.remove('active'); });
+                document.querySelectorAll('.workout-panel').forEach(function(p) { p.classList.remove('active'); });
+                tab.classList.add('active');
+                document.getElementById('panel-' + tab.dataset.day).classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.gym-nav-link').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(link.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.getElementById('gymNavMenu').classList.remove('mobile-open');
+                document.getElementById('gymHamburger').classList.remove('active');
+            });
+        });
+
+        document.getElementById('calcBmi').addEventListener('click', function() {
+            var h = parseFloat(document.getElementById('bmi-height').value);
+            var w = parseFloat(document.getElementById('bmi-weight').value);
+            if (!h || !w) return;
+            var bmi = (w / Math.pow(h / 100, 2)).toFixed(1);
+            var cat = '', color = '';
+            if (bmi < 18.5) { cat = 'Underweight'; color = '#64b5f6'; }
+            else if (bmi < 25) { cat = 'Normal Weight'; color = '#69f0ae'; }
+            else if (bmi < 30) { cat = 'Overweight'; color = '#ffab40'; }
+            else { cat = 'Obese'; color = '#ef5350'; }
+            document.getElementById('bmiNumber').textContent = bmi;
+            document.getElementById('bmiNumber').style.color = color;
+            document.getElementById('bmiCategory').textContent = cat;
+            document.getElementById('bmiCategory').style.color = color;
+            var pct = Math.min(100, Math.max(0, ((bmi - 10) / 30) * 100));
+            document.getElementById('bmiPointer').style.left = pct + '%';
+            document.getElementById('bmiResult').style.display = 'block';
+        });
+
+        document.querySelectorAll('.gym-stat-number').forEach(function(counter) {
+            var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                    if (!e.target._counted && e.isIntersecting) {
+                        e.target._counted = true;
+                        var target = +e.target.dataset.target;
+                        var count = 0;
+                        var run = function() {
+                            count += target / 40;
+                            if (count < target) { e.target.textContent = Math.ceil(count); requestAnimationFrame(run); }
+                            else { e.target.textContent = target; }
+                        };
+                        run();
+                    }
+                });
+            }, { threshold: 0.5 });
+            obs.observe(counter);
+        });
+
+        document.getElementById('gymHamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('gymNavMenu').classList.toggle('mobile-open');
+        });
+
+        var pc = document.getElementById('particles');
+        for (var i = 0; i < 35; i++) {
+            var p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = (Math.random() * 100) + '%';
+            p.style.top = (Math.random() * 100) + '%';
+            p.style.width = (2 + Math.random() * 4) + 'px';
+            p.style.height = p.style.width;
+            p.style.animationDelay = (Math.random() * 8) + 's';
+            p.style.animationDuration = (6 + Math.random() * 10) + 's';
+            pc.appendChild(p);
+        }
+
+        window.addEventListener('scroll', function() {
+            document.querySelector('.gym-navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Lightbox functionality
+        var galleryItems = document.querySelectorAll('.gallery-item');
+        var lightbox = document.getElementById('galleryLightbox');
+        var lightboxImg = document.getElementById('lightboxImg');
+        var lightboxCaption = document.getElementById('lightboxCaption');
+        var lightboxIndex = document.getElementById('lightboxCurrentIndex');
+        var closeBtn = document.querySelector('.lightbox-close');
+        var prevBtn = document.querySelector('.lightbox-prev');
+        var nextBtn = document.querySelector('.lightbox-next');
+        
+        var currentIndex = 0;
+        var images = [];
+        var captions = [];
+
+        // Collect images and captions
+        galleryItems.forEach(function(item) {
+            var img = item.querySelector('img');
+            images.push(img.src);
+            captions.push(item.getAttribute('data-caption') || '');
+        });
+
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightboxContent();
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; // lock background scroll
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = ''; // restore scroll
+        }
+
+        function updateLightboxContent() {
+            lightboxImg.classList.add('changing');
+            
+            setTimeout(function() {
+                lightboxImg.src = images[currentIndex];
+                lightboxCaption.textContent = captions[currentIndex];
+                lightboxIndex.textContent = (currentIndex + 1);
+                
+                lightboxImg.onload = function() {
+                    lightboxImg.classList.remove('changing');
+                };
+            }, 150); // slight delay to allow smooth opacity transition
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLightboxContent();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLightboxContent();
+        }
+
+        galleryItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var index = parseInt(item.getAttribute('data-index'));
+                openLightbox(index);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        nextBtn.addEventListener('click', nextImage);
+        prevBtn.addEventListener('click', prevImage);
+
+        // Close when clicking outside content
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-content') || e.target.classList.contains('lightbox-img-container')) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard support
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Mobile touch swipe support
+        var touchStartX = 0;
+        var touchEndX = 0;
+
+        lightbox.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            var diff = touchEndX - touchStartX;
+            if (Math.abs(diff) > 50) { // threshold of 50px
+                if (diff < 0) {
+                    nextImage(); // Swiped left, show next
+                } else {
+                    prevImage(); // Swiped right, show prev
+                }
+            }
+        }
+    </script>
+</body>
+</html>

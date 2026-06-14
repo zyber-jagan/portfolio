@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagan's FitHub - Book a Session</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="gym.css">
+</head>
+<body>
+    <div class="bg-particles" id="particles"></div>
+
+    <nav class="gym-navbar">
+        <div class="gym-nav-container">
+            <div class="gym-logo">
+                <i class="fas fa-dumbbell logo-icon"></i>
+                <span>FitHub Booking</span>
+            </div>
+            <div class="gym-nav-actions">
+                <a href="gym.html" class="back-portfolio-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>FitHub Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="gym-container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-calendar-check"></i> Session Booking</span>
+                <h2 class="section-title">Coaching & Nutrition Plans</h2>
+                <p class="section-desc">Take the guessing game out of your progress. Book a direct 1-on-1 session on my WhatsApp.</p>
+            </div>
+
+            <div class="booking-grid">
+                <!-- Services Details List -->
+                <div class="services-card-list">
+                    <!-- Service 1: Diet Plan -->
+                    <div class="service-booking-card">
+                        <div class="service-icon-box">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <div class="service-booking-details">
+                            <h4>Personalized Diet Plan (Pay As You Go)</h4>
+                            <p>Get a complete, customized diet blueprint tailored to your daily schedule, food preferences, and fitness targets (fat loss, bulking, or endurance).</p>
+                            <ul class="service-features-list">
+                                <li><i class="fas fa-check"></i> Full macronutrient (g) & calorie breakdown</li>
+                                <li><i class="fas fa-check"></i> Flexible meal swaps for local ingredients</li>
+                                <li><i class="fas fa-check"></i> Specific guidelines on hydration and supplements</li>
+                                <li><i class="fas fa-check"></i> Pay As You Go: Only pay ₹50 when you need a new update!</li>
+                            </ul>
+                            <div class="service-price-tag">Price: <span>₹50</span> per plan</div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Personal Training -->
+                    <div class="service-booking-card pt">
+                        <div class="service-icon-box">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="service-booking-details">
+                            <h4>1-on-1 Personal Trainer Booking</h4>
+                            <p>Direct mentoring to speed up your fitness progress. Receive custom-tailored workout schedules, routine analysis, and weekly form audits.</p>
+                            <ul class="service-features-list">
+                                <li><i class="fas fa-check"></i> Customized 6-day split or full-body schedule</li>
+                                <li><i class="fas fa-check"></i> Video review of your exercise form & lifting technique</li>
+                                <li><i class="fas fa-check"></i> Continuous motivation & direct chat advice</li>
+                                <li><i class="fas fa-check"></i> Custom training adjustments as you get stronger</li>
+                            </ul>
+                            <div class="service-price-tag">Price: <span>Chat to discuss goals</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Connections Column -->
+                <div class="qr-connections-column">
+                    <!-- WhatsApp Card -->
+                    <div class="qr-booking-card wa">
+                        <div class="qr-header">
+                            <h3>Connect on WhatsApp</h3>
+                            <p>Scan the QR below or click the button to chat directly and book your plan!</p>
+                        </div>
+                        <div class="qr-container">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=00ffa3&bgcolor=0d0d1a&data=https%3A%2F%2Fwa.me%2F917358097322%3Ftext%3DHi%2520Jagan%252C%2520I%2527d%2520like%2520to%2520book%2520a%2520personal%2520training%2520%2F%2520diet%2520session%2521" alt="WhatsApp QR Code" class="qr-image">
+                        </div>
+                        <a href="https://wa.me/917358097322?text=Hi%20Jagan,%20I'd%20like%20to%20book%20a%20personal%20training%20/%20diet%20session!" target="_blank" rel="noopener noreferrer" class="qr-chat-btn">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                        <div class="qr-number-display">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+91 7358097322</span>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Card -->
+                    <div class="qr-booking-card insta">
+                        <div class="qr-header">
+                            <h3>Connect on Instagram</h3>
+                            <p>Scan the QR below or click the button to reach me on my Instagram chat!</p>
+                        </div>
+                        <div class="qr-container">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=ff3377&bgcolor=0d0d1a&data=https%3A%2F%2Fwww.instagram.com%2Fmr.riderx_16%3Figsh%3DYTIwOGFidXBjZXli" alt="Instagram QR Code" class="qr-image">
+                        </div>
+                        <a href="https://www.instagram.com/mr.riderx_16?igsh=YTIwOGFidXBjZXli" target="_blank" rel="noopener noreferrer" class="qr-chat-btn insta-btn">
+                            <i class="fab fa-instagram"></i> Chat on Instagram
+                        </a>
+                        <div class="qr-number-display">
+                            <i class="fab fa-instagram"></i>
+                            <span>mr.riderx_16</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gym-footer">
+        <div class="gym-container">
+            <div class="gym-footer-inner">
+                <div class="gym-footer-brand"><i class="fas fa-dumbbell"></i><span>Jagan's FitHub</span></div>
+                <p>Build discipline. Follow the process. Get results.</p>
+                <a href="gym.html" class="footer-portfolio-link"><i class="fas fa-arrow-left"></i> Return to FitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Background particles effect matching gym.html style
+        var pc = document.getElementById('particles');
+        for (var i = 0; i < 35; i++) {
+            var p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = (Math.random() * 100) + '%';
+            p.style.top = (Math.random() * 100) + '%';
+            p.style.width = (2 + Math.random() * 4) + 'px';
+            p.style.height = p.style.width;
+            p.style.animationDelay = (Math.random() * 8) + 's';
+            p.style.animationDuration = (6 + Math.random() * 10) + 's';
+            pc.appendChild(p);
+        }
+
+        window.addEventListener('scroll', function() {
+            document.querySelector('.gym-navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
