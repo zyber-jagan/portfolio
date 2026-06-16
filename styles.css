@@ -16,10 +16,19 @@ body {
     overflow-x: hidden;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 clamp(16px, 4vw, 20px);
 }
 
 /* Navigation */
@@ -32,16 +41,19 @@ body {
     z-index: 1000;
     transition: all 0.3s ease;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: env(safe-area-inset-right, 0);
 }
 
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 clamp(16px, 4vw, 20px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    gap: 1rem;
 }
 
 .nav-logo .logo-text {
@@ -131,6 +143,8 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 4px;
+    z-index: 1001;
 }
 
 .bar {
@@ -139,6 +153,19 @@ body {
     background: #333;
     margin: 3px 0;
     transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Hero Section */
@@ -170,7 +197,7 @@ body {
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 clamp(16px, 4vw, 20px);
     position: relative;
     z-index: 2;
 }
@@ -187,7 +214,7 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.2;
@@ -195,7 +222,7 @@ body {
 
 .title-line {
     display: block;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 400;
     opacity: 0.9;
     margin-bottom: 0.5rem;
@@ -220,14 +247,14 @@ body {
 
 .title-role {
     display: block;
-    font-size: 1.8rem;
+    font-size: clamp(1.1rem, 2.8vw, 1.8rem);
     font-weight: 300;
     margin-top: 0.5rem;
     opacity: 0.9;
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
     margin-bottom: 2rem;
     opacity: 0.9;
     line-height: 1.6;
@@ -449,7 +476,7 @@ section {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 700;
     margin-bottom: 3rem;
     position: relative;
@@ -564,7 +591,7 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 2rem;
 }
 
@@ -693,7 +720,7 @@ section {
 
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -1017,7 +1044,7 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 2rem;
 }
 
@@ -1041,6 +1068,12 @@ section {
     background: linear-gradient(135deg, #00ffff 0%, #ff00ff 100%);
     position: relative;
     overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .project-overlay {
@@ -1157,6 +1190,12 @@ section {
     border-radius: 10px;
     border: 1px solid rgba(0, 255, 255, 0.2);
     transition: all 0.3s ease;
+    word-break: break-word;
+}
+
+.contact-item span {
+    flex: 1;
+    min-width: 0;
 }
 
 .contact-item:hover {
@@ -1253,74 +1292,276 @@ section {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+/* Large tablets & small laptops */
+@media (max-width: 1200px) {
+    .section-indicators {
+        display: none;
+    }
+
+    .nav-menu {
+        gap: 1.25rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+    }
+}
+
+/* Tablets — collapse nav earlier (many menu items) */
+@media (max-width: 1024px) {
     .hamburger {
         display: flex;
     }
-    
+
     .nav-menu {
         position: fixed;
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
         width: 100%;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
         text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem 0;
+        gap: 0;
+        z-index: 999;
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.85rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        gap: 2.5rem;
+    }
+
+    .about-content {
+        gap: 2.5rem;
+    }
+
+    .contact-content {
+        gap: 2.5rem;
+    }
+}
+
+/* Tablets portrait & large phones */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 100px 0 60px;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
-    .hero-title {
-        font-size: 2.5rem;
+
+    .hero-visual {
+        height: 280px;
+        margin-top: 1rem;
     }
-    
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .floating-card {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+        border-radius: 14px;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
     }
-    
+
+    .about-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .stat-item {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
     .contact-content {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-buttons {
         justify-content: center;
     }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
     }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
+
+    .page-toggle-btn span {
+        display: none;
+    }
+
+    .page-toggle-btn {
+        padding: 10px 12px;
+        border-radius: 50%;
+    }
+
+    .skill-level {
+        flex-wrap: wrap;
+    }
+
+    .skill-level span {
+        min-width: auto;
+        width: 100%;
+        text-align: right;
+    }
+
+    .project-content {
+        padding: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.6rem;
+    }
+
+    .gallery-item img {
+        height: 200px;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 }
 
+/* Small phones */
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
+    .nav-container {
+        height: 64px;
     }
-    
-    .title-name {
+
+    .nav-menu {
+        top: 64px;
+        max-height: calc(100vh - 64px);
+    }
+
+    section {
+        padding: 48px 0;
+    }
+
+    .hero {
+        padding: 90px 0 48px;
+    }
+
+    .hero-visual {
+        height: 240px;
+    }
+
+    .profile-image {
+        width: 170px;
+        height: 170px;
+    }
+
+    .floating-card {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
         font-size: 2.5rem;
     }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
+
     .btn {
-        padding: 10px 20px;
+        padding: 12px 20px;
         font-size: 0.9rem;
+    }
+
+    .skill-card,
+    .game-card {
+        padding: 1.25rem;
+    }
+
+    .game-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-details {
+        text-align: left;
+    }
+
+    .highlight-item {
+        padding: 0.85rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        max-width: 100%;
+    }
+
+    .floating-elements {
+        display: none;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
     }
 }
 
@@ -1510,7 +1751,7 @@ section {
 /* Image Gallery Effects */
 .image-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
     gap: 20px;
     margin: 2rem 0;
 }

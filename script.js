@@ -5,12 +5,14 @@ const navMenu = document.querySelector('.nav-menu');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
 });
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
+    document.body.classList.remove('menu-open');
 }));
 
 // Smooth scrolling for navigation links
@@ -56,7 +58,7 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
     // Add animation classes to elements
-    const animateElements = document.querySelectorAll('.skill-card, .project-card, .about-text, .about-stats, .contact-info, .contact-form');
+    const animateElements = document.querySelectorAll('.skill-card, .project-card, .about-text, .about-stats, .contact-info, .contact-form, .react-contact-form');
     animateElements.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
@@ -149,54 +151,7 @@ window.addEventListener('load', () => {
     }
 });
 
-// Form submission handling (Google Apps Script integration)
-const contactForm = document.querySelector('#contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const name = document.querySelector('#contact-name').value.trim();
-        const email = document.querySelector('#contact-email').value.trim();
-        const subject = document.querySelector('#contact-subject').value.trim();
-        const message = document.querySelector('#contact-message').value.trim();
-        const page = document.querySelector('#contact-page').value;
-
-        if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields', 'error');
-            return;
-        }
-
-        // Replace this with your deployed Google Apps Script Web App URL
-        const GOOGLE_APPS_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/PASTE_YOUR_DEPLOYED_WEB_APP_URL_HERE/exec';
-
-        const payload = {
-            name,
-            email,
-            subject,
-            message,
-            page,
-            to: 'sureyasureya001@gmail.com'
-        };
-
-        try {
-            const res = await fetch(GOOGLE_APPS_SCRIPT_WEB_APP_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-
-            // With no-cors, we cannot read the response; assume success
-            showNotification('Message sent! I\'ll get back to you soon.', 'success');
-            contactForm.reset();
-        } catch (err) {
-            console.error(err);
-            showNotification('Failed to send. Please try again later.', 'error');
-        }
-    });
-}
+// Contact form is handled by React (assets/react/contact.js)
 
 // Notification system
 function showNotification(message, type = 'info') {

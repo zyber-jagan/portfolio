@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Jagan's Gym &amp; Diet Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="gym.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <div class="bg-particles" id="particles"></div>
@@ -25,7 +26,7 @@
                 <li><a href="#tips" class="gym-nav-link">Tips</a></li>
             </ul>
             <div class="gym-nav-actions">
-                <a href="booking.html" class="book-trainer-btn">
+                <a href="booking.html#book-slot" class="book-trainer-btn">
                     <i class="fab fa-whatsapp"></i>
                     <span>Book Trainer</span>
                 </a>
@@ -254,10 +255,22 @@
                 <div class="diet-cta-action">
                     <div class="diet-cta-price">
                         <span class="price-currency">₹</span>
-                        <span class="price-val">50</span>
+                        <span class="price-val">199</span>
                         <span class="price-period">/ Plan</span>
                     </div>
-                    <a href="booking.html" class="diet-cta-btn">
+                    <div class="diet-payment-methods">
+                        <span class="payment-label">Pay via</span>
+                        <div class="payment-badges">
+                            <span class="payment-badge"><i class="fas fa-qrcode"></i> UPI</span>
+                            <span class="payment-badge gpay"><i class="fab fa-google"></i> GPay</span>
+                            <span class="payment-badge phonepe">PhonePe</span>
+                            <span class="payment-badge paytm">Paytm</span>
+                        </div>
+                    </div>
+                    <a href="booking.html#pay-diet" class="diet-cta-btn diet-cta-btn-pay">
+                        <i class="fas fa-indian-rupee-sign"></i> Pay ₹199
+                    </a>
+                    <a href="booking.html#book-slot" class="diet-cta-btn diet-cta-btn-secondary">
                         <i class="fab fa-whatsapp"></i> Book via WhatsApp
                     </a>
                 </div>
@@ -284,17 +297,17 @@
                         <img src="gym-images/gym-post-2.jpg" alt="Gym body progress 2" loading="lazy">
                     </div>
                 </div>
-                <div class="gallery-item" data-index="2" data-caption="Core and conditioning. Diet is key for definition.">
+                <div class="gallery-item gallery-item-fit-center" data-index="2" data-caption="Core and conditioning. Diet is key for definition.">
                     <div class="gallery-img-wrapper">
                         <img src="gym-images/gym-post-3.jpg" alt="Gym body progress 3" loading="lazy">
                     </div>
                 </div>
-                <div class="gallery-item" data-index="3" data-caption="Leg gains. Never skip squat day.">
+                <div class="gallery-item gallery-item-fill" data-index="3" data-caption="Leg gains. Never skip squat day.">
                     <div class="gallery-img-wrapper">
                         <img src="gym-images/gym-post-4.jpg" alt="Gym body progress 4" loading="lazy">
                     </div>
                 </div>
-                <div class="gallery-item" data-index="4" data-caption="Post-workout pump. Dedication beats motivation.">
+                <div class="gallery-item gallery-item-fill" data-index="4" data-caption="Post-workout pump. Dedication beats motivation.">
                     <div class="gallery-img-wrapper">
                         <img src="gym-images/gym-post-5.jpg" alt="Gym body progress 5" loading="lazy">
                     </div>
@@ -409,6 +422,7 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 document.getElementById('gymNavMenu').classList.remove('mobile-open');
                 document.getElementById('gymHamburger').classList.remove('active');
+                document.body.classList.remove('menu-open');
             });
         });
 
@@ -453,6 +467,7 @@
         document.getElementById('gymHamburger').addEventListener('click', function() {
             this.classList.toggle('active');
             document.getElementById('gymNavMenu').classList.toggle('mobile-open');
+            document.body.classList.toggle('menu-open');
         });
 
         var pc = document.getElementById('particles');

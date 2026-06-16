@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://api.qrserver.com; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me mailto:;">
     <title>Jagan's FitHub - Book a Session</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="gym.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <div class="bg-particles" id="particles"></div>
@@ -32,7 +37,15 @@
             <div class="section-header">
                 <span class="section-badge"><i class="fas fa-calendar-check"></i> Session Booking</span>
                 <h2 class="section-title">Coaching & Nutrition Plans</h2>
-                <p class="section-desc">Take the guessing game out of your progress. Book a direct 1-on-1 session on my WhatsApp.</p>
+                <p class="section-desc">Fill in your details, pick a slot, and send your booking straight to my WhatsApp — safe, verified, and under my control.</p>
+            </div>
+
+            <!-- Security & trust banner -->
+            <div class="booking-trust-bar">
+                <span><i class="fas fa-shield-alt"></i> Encrypted WhatsApp handoff</span>
+                <span><i class="fas fa-lock"></i> No card or bank data stored</span>
+                <span><i class="fas fa-check-circle"></i> Verified UPI only</span>
+                <span><i class="fas fa-user-shield"></i> Anti-spam protected</span>
             </div>
 
             <div class="booking-grid">
@@ -50,9 +63,36 @@
                                 <li><i class="fas fa-check"></i> Full macronutrient (g) & calorie breakdown</li>
                                 <li><i class="fas fa-check"></i> Flexible meal swaps for local ingredients</li>
                                 <li><i class="fas fa-check"></i> Specific guidelines on hydration and supplements</li>
-                                <li><i class="fas fa-check"></i> Pay As You Go: Only pay ₹50 when you need a new update!</li>
+                                <li><i class="fas fa-check"></i> Pay As You Go: Only pay ₹199 when you need a new update!</li>
                             </ul>
-                            <div class="service-price-tag">Price: <span>₹50</span> per plan</div>
+                            <div class="service-price-tag">Price: <span>₹199</span> per plan</div>
+
+                            <div class="payment-methods-box" id="pay-diet">
+                                <h5><i class="fas fa-wallet"></i> Payment Methods</h5>
+                                <p class="payment-desc">Pay <strong>₹199</strong> using any of these options:</p>
+                                <div class="payment-badges">
+                                    <span class="payment-badge"><i class="fas fa-qrcode"></i> UPI</span>
+                                    <span class="payment-badge gpay"><i class="fab fa-google"></i> Google Pay</span>
+                                    <span class="payment-badge phonepe">PhonePe</span>
+                                    <span class="payment-badge paytm">Paytm</span>
+                                </div>
+                                <div class="upi-details verified-upi-row">
+                                    <span class="upi-label"><i class="fas fa-shield-alt"></i> Verified UPI ID (only pay here)</span>
+                                    <div class="upi-copy-row">
+                                        <strong class="upi-id" id="verified-upi-id">7358097322@paytm</strong>
+                                        <button type="button" class="copy-upi-btn" id="copy-upi-btn" aria-label="Copy UPI ID"><i class="fas fa-copy"></i> Copy</button>
+                                    </div>
+                                </div>
+                                <p class="payment-scam-warning"><i class="fas fa-exclamation-triangle"></i> Never pay to any other UPI ID or link. Scammers may impersonate coaches — always verify <strong>7358097322@paytm</strong>.</p>
+                                <div class="payment-qr-wrap">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&color=00ffa3&bgcolor=0d0d1a&data=upi%3A%2F%2Fpay%3Fpa%3D7358097322%40paytm%26pn%3DP.%2520Jaganathan%26am%3D199%26cu%3DINR%26tn%3DPersonal%2520Diet%2520Plan" alt="UPI QR Code — Pay ₹199" class="payment-qr">
+                                    <span class="payment-qr-hint">Scan to pay ₹199</span>
+                                </div>
+                                <a href="upi://pay?pa=7358097322@paytm&pn=P.%20Jaganathan&am=199&cu=INR&tn=Personal%20Diet%20Plan" class="payment-upi-btn">
+                                    <i class="fas fa-mobile-alt"></i> Pay ₹199 via UPI
+                                </a>
+                                <p class="payment-note"><i class="fab fa-whatsapp"></i> After payment, send the screenshot on WhatsApp to receive your personalized diet plan.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -75,18 +115,24 @@
                     </div>
                 </div>
 
-                <!-- QR Connections Column -->
+                <!-- Booking Form Column -->
                 <div class="qr-connections-column">
-                    <!-- WhatsApp Card -->
-                    <div class="qr-booking-card wa">
+                    <div class="booking-form-card" id="book-slot">
+                        <div class="booking-form-header">
+                            <span class="booking-form-badge"><i class="fas fa-user-check"></i> Candidate Details</span>
+                            <h3>Book Your Slot</h3>
+                            <p>Enter your details and preferred time. Your booking opens in WhatsApp — you tap Send to confirm.</p>
+                        </div>
+                        <div id="booking-react-root"></div>
+                    </div>
+
+                    <!-- Quick WhatsApp Card -->
+                    <div class="qr-booking-card wa compact-wa">
                         <div class="qr-header">
-                            <h3>Connect on WhatsApp</h3>
-                            <p>Scan the QR below or click the button to chat directly and book your plan!</p>
+                            <h3>Quick WhatsApp Chat</h3>
+                            <p>Already booked? Or prefer a quick hello? Chat directly.</p>
                         </div>
-                        <div class="qr-container">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=00ffa3&bgcolor=0d0d1a&data=https%3A%2F%2Fwa.me%2F917358097322%3Ftext%3DHi%2520Jagan%252C%2520I%2527d%2520like%2520to%2520book%2520a%2520personal%2520training%2520%2F%2520diet%2520session%2521" alt="WhatsApp QR Code" class="qr-image">
-                        </div>
-                        <a href="https://wa.me/917358097322?text=Hi%20Jagan,%20I'd%20like%20to%20book%20a%20personal%20training%20/%20diet%20session!" target="_blank" rel="noopener noreferrer" class="qr-chat-btn">
+                        <a href="https://wa.me/917358097322?text=Hi%20Jagan,%20I%20have%20a%20question%20about%20FitHub%20booking." target="_blank" rel="noopener noreferrer" class="qr-chat-btn">
                             <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                         </a>
                         <div class="qr-number-display">
@@ -123,11 +169,14 @@
             <div class="gym-footer-inner">
                 <div class="gym-footer-brand"><i class="fas fa-dumbbell"></i><span>Jagan's FitHub</span></div>
                 <p>Build discipline. Follow the process. Get results.</p>
+                <div class="gym-footer-links">
                 <a href="gym.html" class="footer-portfolio-link"><i class="fas fa-arrow-left"></i> Return to FitHub</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <script type="module" src="assets/react/booking.js"></script>
     <script>
         // Background particles effect matching gym.html style
         var pc = document.getElementById('particles');
@@ -145,6 +194,12 @@
 
         window.addEventListener('scroll', function() {
             document.querySelector('.gym-navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        document.getElementById('copy-upi-btn')?.addEventListener('click', function () {
+            var upi = document.getElementById('verified-upi-id');
+            if (!upi || !navigator.clipboard) return;
+            navigator.clipboard.writeText(upi.textContent.trim());
         });
     </script>
 </body>
