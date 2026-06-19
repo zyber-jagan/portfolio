@@ -51,7 +51,52 @@
             <div class="booking-grid">
                 <!-- Services Details List -->
                 <div class="services-card-list">
-                    <!-- Service 1: Diet Plan -->
+                    <!-- Service 1: Workout Plan -->
+                    <div class="service-booking-card">
+                        <div class="service-icon-box">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="service-booking-details">
+                            <h4>Weekly Workout Plan (Pay As You Go)</h4>
+                            <p>Get the complete 6-day push-pull-legs training schedule with exercise breakdowns, sets, reps, and rest-day guidance delivered on WhatsApp.</p>
+                            <ul class="service-features-list">
+                                <li><i class="fas fa-check"></i> Full 6-day split with daily muscle focus</li>
+                                <li><i class="fas fa-check"></i> Sets, reps, and rest period guidance</li>
+                                <li><i class="fas fa-check"></i> Rest day recovery tips included</li>
+                                <li><i class="fas fa-check"></i> Pay As You Go: Only pay ₹99 to unlock the plan!</li>
+                            </ul>
+                            <div class="service-price-tag">Price: <span>₹99</span> per plan</div>
+
+                            <div class="payment-methods-box" id="pay-workout">
+                                <h5><i class="fas fa-wallet"></i> Payment Methods</h5>
+                                <p class="payment-desc">Pay <strong>₹99</strong> using any of these options:</p>
+                                <div class="payment-badges">
+                                    <span class="payment-badge"><i class="fas fa-qrcode"></i> UPI</span>
+                                    <span class="payment-badge gpay"><i class="fab fa-google"></i> Google Pay</span>
+                                    <span class="payment-badge phonepe">PhonePe</span>
+                                    <span class="payment-badge paytm">Paytm</span>
+                                </div>
+                                <div class="upi-details verified-upi-row">
+                                    <span class="upi-label"><i class="fas fa-shield-alt"></i> Verified UPI ID (only pay here)</span>
+                                    <div class="upi-copy-row">
+                                        <strong class="upi-id">7358097322@paytm</strong>
+                                        <button type="button" class="copy-upi-btn" aria-label="Copy UPI ID"><i class="fas fa-copy"></i> Copy</button>
+                                    </div>
+                                </div>
+                                <p class="payment-scam-warning"><i class="fas fa-exclamation-triangle"></i> Never pay to any other UPI ID or link. Scammers may impersonate coaches — always verify <strong>7358097322@paytm</strong>.</p>
+                                <div class="payment-qr-wrap">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&color=00ffa3&bgcolor=0d0d1a&data=upi%3A%2F%2Fpay%3Fpa%3D7358097322%40paytm%26pn%3DP.%2520Jaganathan%26am%3D99%26cu%3DINR%26tn%3DWeekly%2520Workout%2520Plan" alt="UPI QR Code — Pay ₹99" class="payment-qr">
+                                    <span class="payment-qr-hint">Scan to pay ₹99</span>
+                                </div>
+                                <a href="upi://pay?pa=7358097322@paytm&pn=P.%20Jaganathan&am=99&cu=INR&tn=Weekly%20Workout%20Plan" class="payment-upi-btn">
+                                    <i class="fas fa-mobile-alt"></i> Pay ₹99 via UPI
+                                </a>
+                                <p class="payment-note"><i class="fab fa-whatsapp"></i> After payment, send the screenshot on WhatsApp to receive your full workout plan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Diet Plan -->
                     <div class="service-booking-card">
                         <div class="service-icon-box">
                             <i class="fas fa-apple-alt"></i>
@@ -96,7 +141,7 @@
                         </div>
                     </div>
 
-                    <!-- Service 2: Personal Training -->
+                    <!-- Service 3: Personal Training -->
                     <div class="service-booking-card pt">
                         <div class="service-icon-box">
                             <i class="fas fa-user-friends"></i>
@@ -196,10 +241,13 @@
             document.querySelector('.gym-navbar').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        document.getElementById('copy-upi-btn')?.addEventListener('click', function () {
-            var upi = document.getElementById('verified-upi-id');
-            if (!upi || !navigator.clipboard) return;
-            navigator.clipboard.writeText(upi.textContent.trim());
+        document.querySelectorAll('.copy-upi-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var row = btn.closest('.upi-copy-row');
+                var upi = row ? row.querySelector('.upi-id') : document.getElementById('verified-upi-id');
+                if (!upi || !navigator.clipboard) return;
+                navigator.clipboard.writeText(upi.textContent.trim());
+            });
         });
     </script>
 </body>

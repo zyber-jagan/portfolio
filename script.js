@@ -412,11 +412,22 @@ function initLazyLoading() {
     }
 }
 
+function initProfilePhotoFallback() {
+    const profilePhoto = document.querySelector('.profile-photo');
+    const profileImage = document.querySelector('.profile-image');
+    if (!profilePhoto || !profileImage) return;
+
+    profilePhoto.addEventListener('error', () => {
+        profileImage.classList.add('image-error');
+    });
+}
+
 // Initialize all scroll effects
 document.addEventListener('DOMContentLoaded', () => {
     initAdvancedScrollEffects();
     initSectionIndicators();
     initLazyLoading();
+    initProfilePhotoFallback();
 });
 
 // Add loading animation

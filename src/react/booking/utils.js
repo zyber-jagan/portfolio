@@ -28,11 +28,19 @@ export function formatDate(isoDate) {
 
 export function serviceLabel(value) {
   const labels = {
+    workout: 'Weekly Workout Plan (₹99)',
     diet: 'Personalized Diet Plan (₹199)',
     training: '1-on-1 Personal Training',
     both: 'Diet Plan + Personal Training',
   };
   return labels[value] || value;
+}
+
+function paymentNoteForService(service) {
+  if (service === 'workout') return '_I will share UPI payment screenshot (₹99) if applicable._';
+  if (service === 'diet') return '_I will share UPI payment screenshot (₹199) if applicable._';
+  if (service === 'both') return '_I will share UPI payment screenshot where applicable._';
+  return '_Payment details to be discussed._';
 }
 
 export function slotLabel(value) {
@@ -68,7 +76,7 @@ export function buildWhatsAppMessage(data, ref) {
     `*Preferred Slot:* ${slotLabel(data.slot)}`,
     '',
     '_Legitimate fitness coaching booking only._',
-    '_I will share UPI payment screenshot (₹199) if applicable._',
+    paymentNoteForService(data.service),
   ];
   return { ref: bookingRef, message: lines.join('\n') };
 }

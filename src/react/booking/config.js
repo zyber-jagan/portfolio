@@ -14,6 +14,7 @@ export const BOOKING_CONFIG = {
     { value: '20-21', label: 'Night (8:00 PM – 9:00 PM)', enabled: true },
   ],
   services: [
+    { value: 'workout', label: 'Weekly Workout Plan — ₹99' },
     { value: 'diet', label: 'Personalized Diet Plan — ₹199' },
     { value: 'training', label: '1-on-1 Personal Training' },
     { value: 'both', label: 'Diet Plan + Personal Training' },

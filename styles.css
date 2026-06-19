@@ -360,8 +360,13 @@ img {
     display: none;
 }
 
-.profile-image:not(:has(img))::before {
+.profile-image:not(:has(img))::before,
+.profile-image.image-error::before {
     display: block;
+}
+
+.profile-image.image-error .profile-photo {
+    opacity: 0;
 }
 
 .profile-glow {
