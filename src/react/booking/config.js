@@ -1,8 +1,12 @@
 export const BOOKING_CONFIG = {
   whatsappNumber: '917358097322',
   maxSubmissionsPerHour: 5,
-  minAge: 16,
-  maxAge: 80,
+  minAge: 12,
+  maxAge: 100,
+  minWeight: 30,
+  maxWeight: 250,
+  minHeight: 100,
+  maxHeight: 250,
   maxNameLength: 60,
   maxEmailLength: 120,
   maxBookingDaysAhead: 30,
@@ -14,9 +18,10 @@ export const BOOKING_CONFIG = {
     { value: '20-21', label: 'Night (8:00 PM – 9:00 PM)', enabled: true },
   ],
   services: [
-    { value: 'workout', label: 'Weekly Workout Plan — ₹99' },
-    { value: 'diet', label: 'Personalized Diet Plan — ₹199' },
-    { value: 'training', label: '1-on-1 Personal Training' },
-    { value: 'both', label: 'Diet Plan + Personal Training' },
+    { value: 'diet', label: 'Personalized Diet Plan — ₹199', price: 199 },
+    { value: 'workout', label: 'Weekly Workout Plan — ₹99', price: 99 },
+    { value: 'training', label: '1-on-1 Personal Training — ₹499', price: 499 },
+    { value: 'combo', label: 'Diet + Workout Combo Plan — ₹399 (Most Popular)', price: 399, popular: true },
   ],
 };
+

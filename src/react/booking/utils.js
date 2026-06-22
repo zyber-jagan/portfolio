@@ -27,19 +27,15 @@ export function formatDate(isoDate) {
 }
 
 export function serviceLabel(value) {
-  const labels = {
-    workout: 'Weekly Workout Plan (₹99)',
-    diet: 'Personalized Diet Plan (₹199)',
-    training: '1-on-1 Personal Training',
-    both: 'Diet Plan + Personal Training',
-  };
-  return labels[value] || value;
+  const match = BOOKING_CONFIG.services.find((s) => s.value === value);
+  return match ? match.label.replace(' (Most Popular)', '') : value;
 }
 
 function paymentNoteForService(service) {
   if (service === 'workout') return '_I will share UPI payment screenshot (₹99) if applicable._';
   if (service === 'diet') return '_I will share UPI payment screenshot (₹199) if applicable._';
-  if (service === 'both') return '_I will share UPI payment screenshot where applicable._';
+  if (service === 'training') return '_I will share UPI payment screenshot (₹499) if applicable._';
+  if (service === 'combo') return '_I will share UPI payment screenshot (₹399) if applicable._';
   return '_Payment details to be discussed._';
 }
 
@@ -70,10 +66,13 @@ export function buildWhatsAppMessage(data, ref) {
     `*Service:* ${serviceLabel(data.service)}`,
     `*Name:* ${data.name}`,
     `*Age:* ${data.age}`,
+    `*Gender:* ${data.gender}`,
+    `*Weight:* ${data.weight} kg`,
+    `*Height:* ${data.height} cm`,
     `*Mobile:* +91 ${data.mobile}`,
     `*Email:* ${data.email}`,
+    `*Goal:* ${data.goal}`,
     `*Preferred Date:* ${formatDate(data.date)}`,
-    `*Preferred Slot:* ${slotLabel(data.slot)}`,
     '',
     '_Legitimate fitness coaching booking only._',
     paymentNoteForService(data.service),
@@ -105,3 +104,22 @@ export function recordSubmission() {
     /* ignore */
   }
 }
+
+export function saveBookingLocally(bookingData, ref) {
+  try {
+    const key = 'fithub_booking_history';
+    const stored = JSON.parse(localStorage.getItem(key) || '[]');
+    const newBooking = {
+      id: ref || generateBookingRef(),
+      timestamp: Date.now(),
+      ...bookingData
+    };
+    stored.push(newBooking);
+    localStorage.setItem(key, JSON.stringify(stored));
+    return newBooking;
+  } catch (error) {
+    console.error('Failed to save booking locally:', error);
+    return null;
+  }
+}
+
