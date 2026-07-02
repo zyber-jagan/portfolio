@@ -18,10 +18,10 @@ export const BOOKING_CONFIG = {
     { value: '20-21', label: 'Night (8:00 PM – 9:00 PM)', enabled: true },
   ],
   services: [
-    { value: 'diet', label: 'Personalized Diet Plan — ₹199', price: 199 },
-    { value: 'workout', label: 'Weekly Workout Plan — ₹99', price: 99 },
-    { value: 'training', label: '1-on-1 Personal Training — ₹499', price: 499 },
-    { value: 'combo', label: 'Diet + Workout Combo Plan — ₹399 (Most Popular)', price: 399, popular: true },
+    { value: 'diet', label: 'Personalized Diet Plan — (Was ₹199) ₹185 (7% OFF)', price: 185 },
+    { value: 'workout', label: 'Weekly Workout Plan — (Was ₹99) ₹92 (7% OFF)', price: 92 },
+    { value: 'training', label: '1-on-1 Personal Training — (Was ₹499) ₹464 (7% OFF)', price: 464 },
+    { value: 'combo', label: 'Diet + Workout Combo Plan — (Was ₹399) ₹371 (7% OFF - Most Popular)', price: 371, popular: true },
   ],
 };
 

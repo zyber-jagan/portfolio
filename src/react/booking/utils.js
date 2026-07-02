@@ -32,10 +32,10 @@ export function serviceLabel(value) {
 }
 
 function paymentNoteForService(service) {
-  if (service === 'workout') return '_I will share UPI payment screenshot (₹99) if applicable._';
-  if (service === 'diet') return '_I will share UPI payment screenshot (₹199) if applicable._';
-  if (service === 'training') return '_I will share UPI payment screenshot (₹499) if applicable._';
-  if (service === 'combo') return '_I will share UPI payment screenshot (₹399) if applicable._';
+  if (service === 'workout') return '_I will share UPI payment screenshot (₹92) if applicable._';
+  if (service === 'diet') return '_I will share UPI payment screenshot (₹185) if applicable._';
+  if (service === 'training') return '_I will share UPI payment screenshot (₹464) if applicable._';
+  if (service === 'combo') return '_I will share UPI payment screenshot (₹371) if applicable._';
   return '_Payment details to be discussed._';
 }
 
